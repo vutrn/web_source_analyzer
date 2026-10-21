@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Web Flow Analyzer",
+  "version": "0.1.0",
+  "description": "Inspect JavaScript resources loaded by the current page and analyze their code.",
+  "permissions": ["activeTab", "downloads", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Web Flow Analyzer",
+    "default_popup": "popup.html"
+  }
+}

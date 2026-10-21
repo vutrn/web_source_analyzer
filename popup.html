@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Flow Analyzer</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="toolbar">
+        <div>
+          <h1>Web Flow Analyzer</h1>
+          <p class="subtitle">Scan JavaScript loaded by the active page</p>
+        </div>
+        <button id="scanButton" class="primary-button">Scan Page</button>
+      </header>
+
+      <section class="status-panel">
+        <label for="searchInput" class="sr-only">Search code</label>
+        <input id="searchInput" type="search" placeholder="Search file names or code" />
+        <div id="statusMessage" class="status-message" aria-live="polite">Ready to scan</div>
+      </section>
+
+      <section class="progress-panel" aria-live="polite">
+        <div class="progress-title">Scan process</div>
+        <ul id="scanProgress" class="scan-progress"></ul>
+      </section>
+
+      <section class="content-panel">
+        <aside class="file-panel">
+          <div class="panel-header">
+            <span>Files</span>
+            <button id="exportButton" class="secondary-button" type="button">Export</button>
+          </div>
+          <ul id="fileList" class="file-list" aria-label="Collected files"></ul>
+        </aside>
+
+        <section class="viewer-panel">
+          <div class="viewer-header">
+            <div>
+              <strong id="viewerTitle">No file selected</strong>
+              <div id="viewerMeta" class="viewer-meta"></div>
+            </div>
+            <div class="viewer-actions">
+              <button id="copyButton" class="secondary-button" type="button">Copy selection</button>
+            </div>
+          </div>
+          <pre id="codeViewer" class="code-viewer" aria-live="polite"></pre>
+          <div class="viewer-footer">
+            <button id="expandButton" class="secondary-button" type="button" hidden>Xem thêm</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="dist/popup.js"></script>
+  </body>
+</html>
